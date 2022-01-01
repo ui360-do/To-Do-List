@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  
+  <title>To Do App</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+          <h3 style="color: blue">To-Do List</h3>
+            <input type="text" id="todo" placeholder="Add a to-do"><br>
+            <button class="submit">submit</button>
+            <button class="clear-list">clear list</button><br><br> 
+            <h5 style="color: red"> To-Do Action Items </h5>
+<!Had to use order list to numberthe action items>
+            <ol>
+              <span div class="todo-items"></div></span>
+            </ol>           
+      </div>
+    </div>
+  </div>
+         
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="todo.js"></script>
+</body>
+</html>

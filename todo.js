@@ -1,4 +1,4 @@
-// Create UI variables
+// Create UI variables - New Vairables
 const todo = document.querySelector("#todo");
 const submitBtn = document.querySelector(".submit");
 const clearListBtn = document.querySelector(".clear-list");

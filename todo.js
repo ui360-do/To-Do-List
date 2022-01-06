@@ -3,15 +3,25 @@ const todo = document.querySelector("#todo");
 const submitBtn = document.querySelector(".submit");
 const clearListBtn = document.querySelector(".clear-list");
 const items = document.querySelector(".todo-items");
+const itemCount = document.getElementById("#olCount");
+const itemArr = [];
+
 
 // Listen to the "click" evens and call functions
 submitBtn.addEventListener('click', addTodoFn);
 clearListBtn.addEventListener("click", clearListFn);
 // Create the functions
-  // Build to-do action items
+  
 function addTodoFn(){
+// Build a todo array to track counts
+  if (itemArr !=[]) {
+    itemArr.splice(0,0, todo.value);
+  }
+  
+// Build to-do item list
+
   if(todo.value === ''){
-    alert('Add a to-do');
+    alert('Add a To-Do!');
   } else {
   const newli = document.createElement("li");
   newli.appendChild(document.createTextNode(todo.value));
@@ -28,13 +38,25 @@ function addTodoFn(){
   newli.appendChild(link2);
   items.appendChild(newli);
   todo.value='';
-  
+
+  //  Limit list to 5 items
+    if (itemArr.length > 5){
+      alert('To-Do List Is Full. Five Items is the limit.');
+      items.removeChild(items.lastChild);
+    }
   }
 }
-// This function runs when the "clear list" button is clicked.  It clears the action list.
+
+// This function runs when the "clear list" button is clicked.  It clears the action list and alert if list is empty.
 function clearListFn(){
+  let flag = false;
   while(items.firstChild){
     items.removeChild(items.firstChild);
+    flag = true;
+  }
+
+  if ((!items.firstChild)& (flag === false)){
+    alert('List Is Empty!');
   }
 }
 
@@ -55,6 +77,7 @@ style.innerHTML = `
       }
     `;
 document.head.appendChild(style);
+
 
 // This will remove indivisual action item when the "delete" button is clicked.
 items.addEventListener('click', deleteTodo);
